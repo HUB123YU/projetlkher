@@ -1,0 +1,18 @@
+{
+    "code": "#string",
+    "nom": "#string",
+    "prenom": "#string",
+    "email": "#string",
+    "telephone": "#string",
+    "biographie": "#string",
+    "societe": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

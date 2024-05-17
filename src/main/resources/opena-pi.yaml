@@ -1,0 +1,1768 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /departements:
+    get:
+      summary: List all departements
+      operationId: listDepartements
+      tags:
+        - departements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of departements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Departements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a departement
+      operationId: createDepartements
+      tags:
+        - departements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /departements/{departementId}:
+    get:
+      summary: Info for a specific departement
+      operationId: showDepartementById
+      tags:
+        - departements
+      parameters:
+        - name: departementId
+          in: path
+          required: true
+          description: The id of the departement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Departements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /domaines:
+    get:
+      summary: List all domaines
+      operationId: listDomaines
+      tags:
+        - domaines
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of domaines
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Domaines'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a domaine
+      operationId: createDomaines
+      tags:
+        - domaines
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /domaines/{domaineId}:
+    get:
+      summary: Info for a specific domaine
+      operationId: showDomaineById
+      tags:
+        - domaines
+      parameters:
+        - name: domaineId
+          in: path
+          required: true
+          description: The id of the domaine to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Domaines'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /filieres:
+    get:
+      summary: List all filieres
+      operationId: listFilieres
+      tags:
+        - filieres
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of filieres
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Filieres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a filiere
+      operationId: createFilieres
+      tags:
+        - filieres
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /filieres/{filiereId}:
+    get:
+      summary: Info for a specific filiere
+      operationId: showFiliereById
+      tags:
+        - filieres
+      parameters:
+        - name: filiereId
+          in: path
+          required: true
+          description: The id of the filiere to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Filieres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /juryEncadrantInternes:
+    get:
+      summary: List all juryEncadrantInternes
+      operationId: listJuryEncadrantInternes
+      tags:
+        - juryEncadrantInternes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of juryEncadrantInternes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/JuryEncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a juryEncadrantInterne
+      operationId: createJuryEncadrantInternes
+      tags:
+        - juryEncadrantInternes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /juryEncadrantInternes/{juryEncadrantInterneId}:
+    get:
+      summary: Info for a specific juryEncadrantInterne
+      operationId: showJuryEncadrantInterneById
+      tags:
+        - juryEncadrantInternes
+      parameters:
+        - name: juryEncadrantInterneId
+          in: path
+          required: true
+          description: The id of the juryEncadrantInterne to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/JuryEncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /attachements:
+    get:
+      summary: List all attachements
+      operationId: listAttachements
+      tags:
+        - attachements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of attachements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Attachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a attachement
+      operationId: createAttachements
+      tags:
+        - attachements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /attachements/{attachementId}:
+    get:
+      summary: Info for a specific attachement
+      operationId: showAttachementById
+      tags:
+        - attachements
+      parameters:
+        - name: attachementId
+          in: path
+          required: true
+          description: The id of the attachement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Attachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /payss:
+    get:
+      summary: List all payss
+      operationId: listPayss
+      tags:
+        - payss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of payss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Payss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a pays
+      operationId: createPayss
+      tags:
+        - payss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /payss/{paysId}:
+    get:
+      summary: Info for a specific pays
+      operationId: showPaysById
+      tags:
+        - payss
+      parameters:
+        - name: paysId
+          in: path
+          required: true
+          description: The id of the pays to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Payss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEncadrantInternes:
+    get:
+      summary: List all stageEncadrantInternes
+      operationId: listStageEncadrantInternes
+      tags:
+        - stageEncadrantInternes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of stageEncadrantInternes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StageEncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a stageEncadrantInterne
+      operationId: createStageEncadrantInternes
+      tags:
+        - stageEncadrantInternes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEncadrantInternes/{stageEncadrantInterneId}:
+    get:
+      summary: Info for a specific stageEncadrantInterne
+      operationId: showStageEncadrantInterneById
+      tags:
+        - stageEncadrantInternes
+      parameters:
+        - name: stageEncadrantInterneId
+          in: path
+          required: true
+          description: The id of the stageEncadrantInterne to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StageEncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /genres:
+    get:
+      summary: List all genres
+      operationId: listGenres
+      tags:
+        - genres
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of genres
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Genres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a genre
+      operationId: createGenres
+      tags:
+        - genres
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /genres/{genreId}:
+    get:
+      summary: Info for a specific genre
+      operationId: showGenreById
+      tags:
+        - genres
+      parameters:
+        - name: genreId
+          in: path
+          required: true
+          description: The id of the genre to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Genres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /encadrantExternes:
+    get:
+      summary: List all encadrantExternes
+      operationId: listEncadrantExternes
+      tags:
+        - encadrantExternes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of encadrantExternes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EncadrantExternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a encadrantExterne
+      operationId: createEncadrantExternes
+      tags:
+        - encadrantExternes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /encadrantExternes/{encadrantExterneId}:
+    get:
+      summary: Info for a specific encadrantExterne
+      operationId: showEncadrantExterneById
+      tags:
+        - encadrantExternes
+      parameters:
+        - name: encadrantExterneId
+          in: path
+          required: true
+          description: The id of the encadrantExterne to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EncadrantExternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /nationalites:
+    get:
+      summary: List all nationalites
+      operationId: listNationalites
+      tags:
+        - nationalites
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of nationalites
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Nationalites'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a nationalite
+      operationId: createNationalites
+      tags:
+        - nationalites
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /nationalites/{nationaliteId}:
+    get:
+      summary: Info for a specific nationalite
+      operationId: showNationaliteById
+      tags:
+        - nationalites
+      parameters:
+        - name: nationaliteId
+          in: path
+          required: true
+          description: The id of the nationalite to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Nationalites'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageAttachements:
+    get:
+      summary: List all stageAttachements
+      operationId: listStageAttachements
+      tags:
+        - stageAttachements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of stageAttachements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StageAttachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a stageAttachement
+      operationId: createStageAttachements
+      tags:
+        - stageAttachements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageAttachements/{stageAttachementId}:
+    get:
+      summary: Info for a specific stageAttachement
+      operationId: showStageAttachementById
+      tags:
+        - stageAttachements
+      parameters:
+        - name: stageAttachementId
+          in: path
+          required: true
+          description: The id of the stageAttachement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StageAttachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /jurys:
+    get:
+      summary: List all jurys
+      operationId: listJurys
+      tags:
+        - jurys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of jurys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Jurys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a jury
+      operationId: createJurys
+      tags:
+        - jurys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /jurys/{juryId}:
+    get:
+      summary: Info for a specific jury
+      operationId: showJuryById
+      tags:
+        - jurys
+      parameters:
+        - name: juryId
+          in: path
+          required: true
+          description: The id of the jury to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Jurys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /secteurActivites:
+    get:
+      summary: List all secteurActivites
+      operationId: listSecteurActivites
+      tags:
+        - secteurActivites
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of secteurActivites
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SecteurActivites'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a secteurActivite
+      operationId: createSecteurActivites
+      tags:
+        - secteurActivites
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /secteurActivites/{secteurActiviteId}:
+    get:
+      summary: Info for a specific secteurActivite
+      operationId: showSecteurActiviteById
+      tags:
+        - secteurActivites
+      parameters:
+        - name: secteurActiviteId
+          in: path
+          required: true
+          description: The id of the secteurActivite to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SecteurActivites'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /villes:
+    get:
+      summary: List all villes
+      operationId: listVilles
+      tags:
+        - villes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of villes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Villes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a ville
+      operationId: createVilles
+      tags:
+        - villes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /villes/{villeId}:
+    get:
+      summary: Info for a specific ville
+      operationId: showVilleById
+      tags:
+        - villes
+      parameters:
+        - name: villeId
+          in: path
+          required: true
+          description: The id of the ville to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Villes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEtudiants:
+    get:
+      summary: List all stageEtudiants
+      operationId: listStageEtudiants
+      tags:
+        - stageEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of stageEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StageEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a stageEtudiant
+      operationId: createStageEtudiants
+      tags:
+        - stageEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEtudiants/{stageEtudiantId}:
+    get:
+      summary: Info for a specific stageEtudiant
+      operationId: showStageEtudiantById
+      tags:
+        - stageEtudiants
+      parameters:
+        - name: stageEtudiantId
+          in: path
+          required: true
+          description: The id of the stageEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StageEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiants:
+    get:
+      summary: List all etudiants
+      operationId: listEtudiants
+      tags:
+        - etudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Etudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etudiant
+      operationId: createEtudiants
+      tags:
+        - etudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiants/{etudiantId}:
+    get:
+      summary: Info for a specific etudiant
+      operationId: showEtudiantById
+      tags:
+        - etudiants
+      parameters:
+        - name: etudiantId
+          in: path
+          required: true
+          description: The id of the etudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Etudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeStages:
+    get:
+      summary: List all typeStages
+      operationId: listTypeStages
+      tags:
+        - typeStages
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeStages
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeStages'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeStage
+      operationId: createTypeStages
+      tags:
+        - typeStages
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeStages/{typeStageId}:
+    get:
+      summary: Info for a specific typeStage
+      operationId: showTypeStageById
+      tags:
+        - typeStages
+      parameters:
+        - name: typeStageId
+          in: path
+          required: true
+          description: The id of the typeStage to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeStages'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stages:
+    get:
+      summary: List all stages
+      operationId: listStages
+      tags:
+        - stages
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of stages
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Stages'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a stage
+      operationId: createStages
+      tags:
+        - stages
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stages/{stageId}:
+    get:
+      summary: Info for a specific stage
+      operationId: showStageById
+      tags:
+        - stages
+      parameters:
+        - name: stageId
+          in: path
+          required: true
+          description: The id of the stage to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Stages'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeAttachements:
+    get:
+      summary: List all typeAttachements
+      operationId: listTypeAttachements
+      tags:
+        - typeAttachements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeAttachements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeAttachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeAttachement
+      operationId: createTypeAttachements
+      tags:
+        - typeAttachements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeAttachements/{typeAttachementId}:
+    get:
+      summary: Info for a specific typeAttachement
+      operationId: showTypeAttachementById
+      tags:
+        - typeAttachements
+      parameters:
+        - name: typeAttachementId
+          in: path
+          required: true
+          description: The id of the typeAttachement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeAttachements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /societes:
+    get:
+      summary: List all societes
+      operationId: listSocietes
+      tags:
+        - societes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of societes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Societes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a societe
+      operationId: createSocietes
+      tags:
+        - societes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /societes/{societeId}:
+    get:
+      summary: Info for a specific societe
+      operationId: showSocieteById
+      tags:
+        - societes
+      parameters:
+        - name: societeId
+          in: path
+          required: true
+          description: The id of the societe to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Societes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEncadrantExternes:
+    get:
+      summary: List all stageEncadrantExternes
+      operationId: listStageEncadrantExternes
+      tags:
+        - stageEncadrantExternes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of stageEncadrantExternes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StageEncadrantExternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a stageEncadrantExterne
+      operationId: createStageEncadrantExternes
+      tags:
+        - stageEncadrantExternes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /stageEncadrantExternes/{stageEncadrantExterneId}:
+    get:
+      summary: Info for a specific stageEncadrantExterne
+      operationId: showStageEncadrantExterneById
+      tags:
+        - stageEncadrantExternes
+      parameters:
+        - name: stageEncadrantExterneId
+          in: path
+          required: true
+          description: The id of the stageEncadrantExterne to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StageEncadrantExternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /encadrantInternes:
+    get:
+      summary: List all encadrantInternes
+      operationId: listEncadrantInternes
+      tags:
+        - encadrantInternes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of encadrantInternes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a encadrantInterne
+      operationId: createEncadrantInternes
+      tags:
+        - encadrantInternes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /encadrantInternes/{encadrantInterneId}:
+    get:
+      summary: Info for a specific encadrantInterne
+      operationId: showEncadrantInterneById
+      tags:
+        - encadrantInternes
+      parameters:
+        - name: encadrantInterneId
+          in: path
+          required: true
+          description: The id of the encadrantInterne to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EncadrantInternes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  Departement:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  Departements:
+    type: array
+    items:
+      $ref: '#/definitions/Departement'
+  Domaine:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  Domaines:
+    type: array
+    items:
+      $ref: '#/definitions/Domaine'
+  Filiere:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Filieres:
+    type: array
+    items:
+      $ref: '#/definitions/Filiere'
+  JuryEncadrantInterne:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  JuryEncadrantInternes:
+    type: array
+    items:
+      $ref: '#/definitions/JuryEncadrantInterne'
+  Attachement:
+    type: "object"
+    required:
+      - id
+      - nom
+      - contenu
+      - taille
+    properties:
+      id:
+        type: int
+      nom:
+        type: string
+      contenu:
+        type: string
+      taille:
+        type: number
+  Attachements:
+    type: array
+    items:
+      $ref: '#/definitions/Attachement'
+  Pays:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+  Payss:
+    type: array
+    items:
+      $ref: '#/definitions/Pays'
+  StageEncadrantInterne:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  StageEncadrantInternes:
+    type: array
+    items:
+      $ref: '#/definitions/StageEncadrantInterne'
+  Genre:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  Genres:
+    type: array
+    items:
+      $ref: '#/definitions/Genre'
+  EncadrantExterne:
+    type: "object"
+    required:
+      - id
+      - code
+      - nom
+      - prenom
+      - email
+      - telephone
+      - biographie
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      nom:
+        type: string
+      prenom:
+        type: string
+      email:
+        type: string
+      telephone:
+        type: string
+      biographie:
+        type: string
+  EncadrantExternes:
+    type: array
+    items:
+      $ref: '#/definitions/EncadrantExterne'
+  Nationalite:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  Nationalites:
+    type: array
+    items:
+      $ref: '#/definitions/Nationalite'
+  StageAttachement:
+    type: "object"
+    required:
+      - id
+      - size
+    properties:
+      id:
+        type: int
+      size:
+        type: number
+  StageAttachements:
+    type: array
+    items:
+      $ref: '#/definitions/StageAttachement'
+  Jury:
+    type: "object"
+    required:
+      - id
+      - ref
+      - nombreMembres
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      nombreMembres:
+        type: int
+  Jurys:
+    type: array
+    items:
+      $ref: '#/definitions/Jury'
+  SecteurActivite:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+  SecteurActivites:
+    type: array
+    items:
+      $ref: '#/definitions/SecteurActivite'
+  Ville:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+  Villes:
+    type: array
+    items:
+      $ref: '#/definitions/Ville'
+  StageEtudiant:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  StageEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/StageEtudiant'
+  Etudiant:
+    type: "object"
+    required:
+      - id
+      - adresse
+      - telephone
+      - dateNaissance
+      - codeAppoge
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      adresse:
+        type: string
+      telephone:
+        type: string
+      dateNaissance:
+        type: date
+      codeAppoge:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  Etudiants:
+    type: array
+    items:
+      $ref: '#/definitions/Etudiant'
+  TypeStage:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+  TypeStages:
+    type: array
+    items:
+      $ref: '#/definitions/TypeStage'
+  Stage:
+    type: "object"
+    required:
+      - id
+      - sujet
+      - description
+      - dateDebut
+      - dateFin
+      - lieu
+      - dureeSemaines
+      - note
+      - dateSoutenance
+    properties:
+      id:
+        type: int
+      sujet:
+        type: string
+      description:
+        type: string
+      dateDebut:
+        type: date
+      dateFin:
+        type: date
+      lieu:
+        type: string
+      dureeSemaines:
+        type: int
+      note:
+        type: number
+      dateSoutenance:
+        type: date
+  Stages:
+    type: array
+    items:
+      $ref: '#/definitions/Stage'
+  TypeAttachement:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+  TypeAttachements:
+    type: array
+    items:
+      $ref: '#/definitions/TypeAttachement'
+  Societe:
+    type: "object"
+    required:
+      - id
+      - ice
+      - nom
+      - adresse
+      - fax
+      - domaine
+      - email
+      - telephone
+      - codePostal
+    properties:
+      id:
+        type: int
+      ice:
+        type: string
+      nom:
+        type: string
+      adresse:
+        type: string
+      fax:
+        type: string
+      domaine:
+        type: string
+      email:
+        type: string
+      telephone:
+        type: string
+      codePostal:
+        type: string
+  Societes:
+    type: array
+    items:
+      $ref: '#/definitions/Societe'
+  StageEncadrantExterne:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  StageEncadrantExternes:
+    type: array
+    items:
+      $ref: '#/definitions/StageEncadrantExterne'
+  EncadrantInterne:
+    type: "object"
+    required:
+      - id
+      - code
+      - biographie
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      biographie:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  EncadrantInternes:
+    type: array
+    items:
+      $ref: '#/definitions/EncadrantInterne'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

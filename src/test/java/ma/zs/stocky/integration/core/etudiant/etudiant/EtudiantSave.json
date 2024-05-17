@@ -1,0 +1,24 @@
+{
+    "adresse": "adresse-1",
+    "telephone": "telephone-1",
+    "genre": {"id": "1"},
+    "nationalite": {"id": "1"},
+    "codeAppoge": "codeAppoge-1",
+    "filiere": {"id": "1"},
+    "credentialsNonExpired": "true",
+    "enabled": "true",
+    "accountNonExpired": "true",
+    "accountNonLocked": "true",
+    "passwordChanged": "true",
+    "username": "username-1",
+    "password": "password-1"
+
+}
+
+
+
+
+
+
+
+

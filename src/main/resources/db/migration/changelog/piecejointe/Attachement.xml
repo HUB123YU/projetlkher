@@ -1,0 +1,65 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="attachement">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="nom" type="VARCHAR(500)"/>
+        <column name="contenu" type="VARCHAR(500)"/>
+        <column name="taille" type="NUMERIC"/>
+
+        <column name="type_attachement_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="stage_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="attachement"
+              baseColumnNames="type_attachement_id"
+              referencedTableName="type_attachement"
+              referencedColumnNames="id"
+              constraintName="fk_attachement_type_attachement"/>
+      <addForeignKeyConstraint
+              baseTableName="attachement"
+              baseColumnNames="stage_id"
+              referencedTableName="stage"
+              referencedColumnNames="id"
+              constraintName="fk_attachement_stage"/>
+
+  </changeSet>
+
+    <!-- Create Sequence for ContainerType -->
+  <changeSet id="3" author="your-name">
+    <createSequence sequenceName="attachement_seq" startValue="1" incrementBy="1"/>
+  </changeSet>
+
+  <!-- Load Data from CSV -->
+  <changeSet id="4" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/piecejointe/Attachement.csv"
+            tableName="attachement">
+      <column name="id" type="NUMERIC"/>
+          <column name="nom" type="STRING"/>
+          <column name="contenu" type="STRING"/>
+          <column name="taille" type="NUMERIC"/>
+        <column name="type_attachement" type="BIGINT"/>
+        <column name="stage" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

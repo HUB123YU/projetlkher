@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+            <include file="classpath:db/migration/changelog/departement/Departement.xml"/>
+        <include file="classpath:db/migration/changelog/departement/Domaine.xml"/>
+        <include file="classpath:db/migration/changelog/departement/Filiere.xml"/>
+        <include file="classpath:db/migration/changelog/encadrant/JuryEncadrantInterne.xml"/>
+        <include file="classpath:db/migration/changelog/piecejointe/Attachement.xml"/>
+        <include file="classpath:db/migration/changelog/appartenance/Pays.xml"/>
+        <include file="classpath:db/migration/changelog/stage/StageEncadrantInterne.xml"/>
+        <include file="classpath:db/migration/changelog/appartenance/Genre.xml"/>
+        <include file="classpath:db/migration/changelog/encadrant/EncadrantExterne.xml"/>
+        <include file="classpath:db/migration/changelog/appartenance/Nationalite.xml"/>
+        <include file="classpath:db/migration/changelog/stage/StageAttachement.xml"/>
+        <include file="classpath:db/migration/changelog/jury/Jury.xml"/>
+        <include file="classpath:db/migration/changelog/departement/SecteurActivite.xml"/>
+        <include file="classpath:db/migration/changelog/appartenance/Ville.xml"/>
+        <include file="classpath:db/migration/changelog/stage/StageEtudiant.xml"/>
+        <include file="classpath:db/migration/changelog/etudiant/Etudiant.xml"/>
+        <include file="classpath:db/migration/changelog/stage/TypeStage.xml"/>
+        <include file="classpath:db/migration/changelog/stage/Stage.xml"/>
+        <include file="classpath:db/migration/changelog/piecejointe/TypeAttachement.xml"/>
+        <include file="classpath:db/migration/changelog/societe/Societe.xml"/>
+        <include file="classpath:db/migration/changelog/stage/StageEncadrantExterne.xml"/>
+        <include file="classpath:db/migration/changelog/encadrant/EncadrantInterne.xml"/>
+
+</databaseChangeLog>

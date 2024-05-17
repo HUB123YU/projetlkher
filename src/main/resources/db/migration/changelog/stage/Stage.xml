@@ -1,0 +1,105 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="stage">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="sujet" type="VARCHAR(500)"/>
+        <column name="description" type="VARCHAR(500)"/>
+        <column name="date_debut" type="TIMESTAMP"/>
+        <column name="date_fin" type="TIMESTAMP"/>
+        <column name="lieu" type="VARCHAR(500)"/>
+        <column name="duree_semaines" type="BIGINT"/>
+        <column name="note" type="NUMERIC"/>
+        <column name="date_soutenance" type="TIMESTAMP"/>
+
+        <column name="domaine_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="societe_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="jury_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="filiere_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_stage_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="stage"
+              baseColumnNames="domaine_id"
+              referencedTableName="domaine"
+              referencedColumnNames="id"
+              constraintName="fk_stage_domaine"/>
+      <addForeignKeyConstraint
+              baseTableName="stage"
+              baseColumnNames="societe_id"
+              referencedTableName="societe"
+              referencedColumnNames="id"
+              constraintName="fk_stage_societe"/>
+      <addForeignKeyConstraint
+              baseTableName="stage"
+              baseColumnNames="jury_id"
+              referencedTableName="jury"
+              referencedColumnNames="id"
+              constraintName="fk_stage_jury"/>
+      <addForeignKeyConstraint
+              baseTableName="stage"
+              baseColumnNames="filiere_id"
+              referencedTableName="filiere"
+              referencedColumnNames="id"
+              constraintName="fk_stage_filiere"/>
+      <addForeignKeyConstraint
+              baseTableName="stage"
+              baseColumnNames="type_stage_id"
+              referencedTableName="type_stage"
+              referencedColumnNames="id"
+              constraintName="fk_stage_type_stage"/>
+
+  </changeSet>
+
+    <!-- Create Sequence for ContainerType -->
+  <changeSet id="3" author="your-name">
+    <createSequence sequenceName="stage_seq" startValue="1" incrementBy="1"/>
+  </changeSet>
+
+  <!-- Load Data from CSV -->
+  <changeSet id="4" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/stage/Stage.csv"
+            tableName="stage">
+      <column name="id" type="NUMERIC"/>
+          <column name="sujet" type="STRING"/>
+          <column name="description" type="STRING"/>
+          <column name="date_debut" type="TIMESTAMP"/>
+          <column name="date_fin" type="TIMESTAMP"/>
+          <column name="lieu" type="STRING"/>
+          <column name="duree_semaines" type="NUMERIC"/>
+          <column name="note" type="NUMERIC"/>
+          <column name="date_soutenance" type="TIMESTAMP"/>
+        <column name="domaine" type="BIGINT"/>
+        <column name="societe" type="BIGINT"/>
+        <column name="jury" type="BIGINT"/>
+        <column name="filiere" type="BIGINT"/>
+        <column name="type_stage" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

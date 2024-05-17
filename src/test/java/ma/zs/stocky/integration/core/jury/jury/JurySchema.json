@@ -1,0 +1,24 @@
+{
+    "ref": "#string",
+    "nombreMembres": "#number",
+
+    "juryEncadrantInternes": [
+      {
+        "encadrantInterne":{"id": "#number"}}
+      },
+      {
+        "encadrantInterne":{"id": "#number"}}
+      },
+      {
+        "encadrantInterne":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

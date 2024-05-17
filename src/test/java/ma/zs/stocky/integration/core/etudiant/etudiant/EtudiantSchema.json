@@ -1,0 +1,24 @@
+{
+    "adresse": "#string",
+    "telephone": "#string",
+    "genre": {"id": "#number"},
+    "nationalite": {"id": "#number"},
+    "codeAppoge": "#string",
+    "filiere": {"id": "#number"},
+    "credentialsNonExpired": "#bool",
+    "enabled": "#bool",
+    "accountNonExpired": "#bool",
+    "accountNonLocked": "#bool",
+    "passwordChanged": "#bool",
+    "username": "#string",
+    "password": "#string"
+
+}
+
+
+
+
+
+
+
+

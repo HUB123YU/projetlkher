@@ -1,0 +1,24 @@
+{
+    "ref": "ref-1",
+    "nombreMembres": "10",
+
+    "juryEncadrantInternes": [
+        {
+            "encadrantInterne":{"id": "1"}
+        },
+        {
+            "encadrantInterne":{"id": "2"}
+        },
+        {
+            "encadrantInterne":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

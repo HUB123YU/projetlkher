@@ -1,0 +1,68 @@
+{
+    "sujet": "#string",
+    "description": "#string",
+    "domaine": {"id": "#number"},
+    "lieu": "#string",
+    "dureeSemaines": "#number",
+    "societe": {"id": "#number"},
+    "jury": {"id": "#number"},
+    "filiere": {"id": "#number"},
+    "note": "#number",
+    "typeStage": {"id": "#number"},
+
+    "stageEtudiants": [
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      }
+    ],
+    "stageEncadrantInternes": [
+      {
+        "encadrantInterne":{"id": "#number"}}
+      },
+      {
+        "encadrantInterne":{"id": "#number"}}
+      },
+      {
+        "encadrantInterne":{"id": "#number"}}
+      }
+    ],
+    "stageEncadrantExternes": [
+      {
+        "encadrantExterne":{"id": "#number"}}
+      },
+      {
+        "encadrantExterne":{"id": "#number"}}
+      },
+      {
+        "encadrantExterne":{"id": "#number"}}
+      }
+    ],
+    "stageAttachements": [
+      {
+        "attachement":{"id": "#number"},}
+        "size":"#number"}
+      },
+      {
+        "attachement":{"id": "#number"},}
+        "size":"#number"}
+      },
+      {
+        "attachement":{"id": "#number"},}
+        "size":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+
