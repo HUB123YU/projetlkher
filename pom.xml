@@ -162,6 +162,12 @@
             <artifactId>poi</artifactId>
             <version>${poi.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ma.zs</groupId>
+            <artifactId>stocky</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
